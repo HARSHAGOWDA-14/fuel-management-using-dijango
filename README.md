@@ -1,2 +1,34 @@
-# fuel-management-using-dijango
-Built a Django REST API that calculates optimal fuel stops between two USA locations using OpenRouteService and fuel price data. The API returns route details, cheapest fuel stations along the path, estimated fuel usage, and total trip fuel cost based on 10 MPG and a 500-mile vehicle range.
+
+# Fuel Route Optimization API
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+## Endpoint
+
+POST `/api/optimize-route/`
+
+### Example Request
+
+```json
+{
+  "start": "Dallas, TX",
+  "finish": "Phoenix, AZ"
+}
+```
+
+## Free Routing API
+
+Use OpenRouteService:
+https://openrouteservice.org/
+
+Replace:
+`YOUR_OPENROUTESERVICE_API_KEY`
+
+inside:
+`routes/services.py`
